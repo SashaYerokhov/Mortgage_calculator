@@ -14,7 +14,6 @@ const resultRepayments = document.querySelector(".result");
 const resultTotal = document.querySelector(".result__mortgage");
 const cartTypesParrent = document.querySelector(".cart-type");
 
-// Валидация полей ввода суммы, времени и процентов
 function validateInputs(event) {
   const amountVal = amount.value.trim();
   const termVal = term.value.trim();
@@ -60,12 +59,6 @@ function setSucces(element) {
   inputGroup.classList.remove("error");
 }
 
-// Валидация радио-кнопок
-/*перебираются радио-кнопки и если радио-кнопка имеет checked
- * тода удаляется класс error
-* если не не валид то есть радио-кнопка не checked 
-* класс об ошибке добавляется
- */
 function validateRadio() {
   const msgError = document.querySelector(".cart-type p");
   var btnValid = false;
@@ -89,10 +82,6 @@ cartCalculate.addEventListener("click", (event) => {
     event.preventDefault();
   }
 });
-
-// Рассчет ипотечного калькулятора и используется 
-// для знаков библиотека http://numeraljs.com/
-// Ипотечный калькулятор был взят с https://w3programmings.com/build-a-mortgage-calculator-using-javascript/
 
 function calculateMortgage(event) {
   event.preventDefault();
@@ -131,9 +120,6 @@ function calculateMortgage(event) {
 
 cartCalculate.addEventListener("click", calculateMortgage);
 
-// переключение радио-кнопок
-// при клике по радио-кнопке добавляется класс focus
-// focus изменяет css-свойства
 cartTypes.forEach((cartType) => {
   cartType.addEventListener("click", () => {
     cartTypes.forEach((radio) => radio.classList.remove("focus"));
@@ -141,7 +127,6 @@ cartTypes.forEach((cartType) => {
   });
 });
 
-// очистка данных
 clearAll.addEventListener("click", (event) => {
     event.preventDefault();
   mortgageForm.reset();
