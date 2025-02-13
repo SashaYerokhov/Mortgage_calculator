@@ -138,7 +138,6 @@ input[type="number"]:focus {
   outline: 1px solid var(--lime);
 }
 
-/* Если инпут в фокусе - изменяется цвет кнопок внутри инпута */
 .icon-amount:has(~ input:focus),
 .icon-term:has(~ input:focus),
 .icon-rate:has(~ input:focus) {
@@ -164,7 +163,6 @@ input[type="number"]:focus {
   border: 2px solid var(--slate-500);
 }
 
-/* скрытие надписей под инпутом */
 :is(.amount, .cart-term, .cart-rate) p {
   display: none;
 }
@@ -253,7 +251,6 @@ input[type="number"]:focus {
   cursor: pointer;
 }
 
-/* Удаление стандартных радио-кнопок */
 .cart-type ul li .radio input[type="radio"] {
   position: absolute;
   width: 0;
@@ -262,7 +259,6 @@ input[type="number"]:focus {
   top: 0;
 }
 
-/* Установка самостоятельных радио-кнопок */
 .cart-type ul li .radio input[type="radio"]::before {
   content: '';
   display: inline-block;
