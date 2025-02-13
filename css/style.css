@@ -1,0 +1,497 @@
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --red: hsl(4, 69%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --slate-100: hsl(202, 86%, 94%);
+  --slate-300: hsl(203, 41%, 72%);
+  --slate-500: hsl(200, 26%, 54%);
+  --slate-700: hsl(200, 24%, 40%);
+  --slate-900: hsl(202, 55%, 16%);
+}
+
+@font-face {
+  font-family: "plus-jakarta-sans-medium", serif;
+  src: url('../assets/fonts/static/PlusJakartaSans-Medium.ttf');
+}
+@font-face {
+  font-family: "plus-jakarta-sans-bold", serif;
+  src: url('../assets/fonts/static/PlusJakartaSans-Bold.ttf');
+}
+
+body {
+  max-width: 90rem;
+  min-height: 64rem;
+  background: var(--slate-100);
+}
+
+.plus-jakarta-sans-medium {
+  font-family: "Plus Jakarta Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.plus-jakarta-sans-bold {
+  font-family: "Plus Jakarta Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cart {
+  font-family: "Plus Jakarta Sans", serif;
+  max-width: 69.375rem;
+  min-height: 37.8125rem;
+  margin: 200px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  background-color: var(--white);
+  
+}
+.cart__left {
+  padding: 40px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+.cart__left-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 45px;
+}
+
+.cart__left-header h1 {
+  color: var(--slate-700);
+}
+
+.cart__left-header button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.cart__left-header button a {
+  color: var(--slate-500);
+}
+
+label {
+  color: var(--slate-500);
+  display: block;
+  margin-block-end: 12px;
+}
+
+.clear-form a:hover {
+  color: var(--slate-900);
+}
+
+.amount,
+.cart-term,
+.cart-rate {
+  position: relative;
+}
+
+.amount input::placeholder {
+  background-color: var(--slate-100);
+  color: var(--slate-900);
+  font-size: 1.25rem;
+  font-weight: 700;
+  width: 2.75rem;
+  height: 3.4375rem;
+}
+
+.icon-amount {
+  position: absolute;
+  background-color: var(--slate-100);
+  color: var(--slate-900);
+  font-size: 1.25rem;
+  font-weight: 700;
+  left: 1px;
+  top: 37px;
+  padding: 11px 17px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+input[type="number"] {
+  border: 1px solid var(--slate-500);
+  width: 100%;
+  height: 3.4375rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:hover {
+  border: 1px solid var(--slate-900);
+}
+
+.amount input[type="number"] {
+  padding-left: 55px;
+}
+
+.cart-term input[type="number"],
+.cart-rate input[type="number"] {
+  padding-left: 20px;
+}
+
+input[type="number"]:focus {
+  border-color: var(--lime);
+  outline: 1px solid var(--lime);
+}
+
+/* Если инпут в фокусе - изменяется цвет кнопок внутри инпута */
+.icon-amount:has(~ input:focus),
+.icon-term:has(~ input:focus),
+.icon-rate:has(~ input:focus) {
+  background-color: var(--lime);
+}
+
+.amount.error .icon-amount,
+.cart-term.error .icon-term,
+.cart-rate.error .icon-rate {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.amount.error input,
+.cart-rate.error input,
+.cart-term.error input {
+  border: 2px solid var(--red);
+}
+
+.amount.success input,
+.cart-rate.success input,
+.cart-term.success input {
+  border: 2px solid var(--slate-500);
+}
+
+/* скрытие надписей под инпутом */
+:is(.amount, .cart-term, .cart-rate) p {
+  display: none;
+}
+
+.amount.error p,
+.cart-term.error p,
+.cart-rate.error p,
+.cart-type.error p {
+  display: block;
+  color: var(--red);
+  font-size: 0.875rem;
+  padding-top: 10px;
+}
+
+.cart-term-rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-block: 25px 40px;
+}
+
+.icon-term {
+  position: absolute;
+  background-color: var(--slate-100);
+  color: var(--slate-900);
+  font-size: 1.25rem;
+  font-weight: 700;
+  right: 1px;
+  top: 37px;
+  padding: 11px 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.icon-rate {
+  position: absolute;
+  right: 1px;
+  top: 37px;
+  background-color: var(--slate-100);
+  color: var(--slate-900);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 11px 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.cart-type {
+  margin-block-end: 40px;
+}
+
+.cart-type h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--slate-500);
+  margin-block-end: 15px;
+}
+.cart-type ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.cart-type ul li {
+  display: block;
+  border: 1px solid var(--slate-700);
+  width: 100%;
+  height: 3.125rem;
+  border-radius: 10px;
+  padding-left: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-type ul .type-play {
+  margin-block-end: 10px;
+}
+.cart-type ul li .radio {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  position: relative;
+  padding-left: 50px;
+  margin-block-end: 0;
+  cursor: pointer;
+}
+
+/* Удаление стандартных радио-кнопок */
+.cart-type ul li .radio input[type="radio"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+}
+
+/* Установка самостоятельных радио-кнопок */
+.cart-type ul li .radio input[type="radio"]::before {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 5px;
+  background: transparent;
+  border: 2px solid var(--slate-700);
+  border-radius: 50%;
+}
+
+.cart-type ul li .radio input[type="radio"]:checked::before {
+  border-color: var(--lime);
+}
+
+.cart-type ul li .radio input[type="radio"]:checked::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--lime);
+  border: 2px solid var(--lime);
+  border-radius: 50%;
+  left: 5px;
+  top: 10px;
+}
+
+.cart-type p {
+  display: none;
+  color: var(--red);
+  font-size: 0.875rem;
+  padding-top: 10px;
+}
+.cart-type.error p{
+  display: block;
+}
+
+.cart-type ul li.focus {
+  border-color: var(--lime);
+  background-color: hsla(61, 70%, 52%, .3);
+}
+
+.cart-type ul li:hover {
+  border-color: var(--lime);
+}
+
+.cart__calculate {
+  color: var(--slate-900);
+  background-color: var(--lime);
+  border: none;
+  width: 19.6875rem;
+  height: 3.4375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.cart__calculate:hover {
+  background-color: hsla(61, 70%, 52%, .5);
+}
+.cart__right {
+  min-height: 664px;
+  background-color: var(--slate-900);
+  color: var(--slate-100);
+  border-radius: 50px;
+  border-top-left-radius: 0;
+}
+
+.cart__right-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 40px;
+  margin-block-start: 150px;
+}
+
+.cart__right-default h3 {
+  color: var(--white);
+  margin-block-end: 25px;
+}
+
+.cart__right-default p {
+  text-align: center;
+  color: var(--slate-500);
+}
+
+.cart__right-default.active {
+  display: none;
+}
+
+.cart__right-result {
+  display: none;
+}
+
+.cart__right-result.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline: 40px;
+  margin-block-start: 45px;
+}
+
+.cart__right-result h4 {
+  color: var(--white);
+  margin-block-end: 25px;
+}
+
+.cart__right-result .text__result {
+  color: var(--slate-300);
+  margin-block-end: 40px;
+}
+
+.mortgage__result {
+  background-color: black;
+  width: 26.5625rem;
+  min-height: 18.75rem;
+  padding-inline: 30px;
+  padding-block-start: 35px;
+  border-radius: 10px;
+  border-top: 4px solid var(--lime);
+}
+
+.mortgage__result p {
+  color: var(--slate-300);
+}
+
+.mortgage__result p:first-child {
+  margin-bottom: 20px;
+}
+.mortgage__result p:nth-child(3) {
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+
+.mortgage__result .result {
+  color: var(--lime);
+  font-size: 3.125rem;
+  font-weight: 700;
+  padding-bottom: 35px;
+  border-bottom: 1px solid var(--slate-300);
+}
+
+.mortgage__result .result__mortgage {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+  .cart__left-header {
+    flex-direction: column;
+    align-items: start;
+    margin-block-end: 35px;
+  }
+
+  label,
+  .cart-type h4 {
+    color: var(--slate-700);
+    font-weight: 700;
+  }
+
+  .cart__left-header h2 {
+    margin-block-end: 8px;
+  }
+  .cart__left-header button {
+    padding: 0;
+  }
+  .cart-term-rate {
+    display: block;
+    margin-block-end: 25px; 
+  }
+
+  .cart-term {
+    margin-block-end: 30px;    
+  }
+
+  .cart__right {
+    min-height: 28.4375rem;
+    border-radius: 0;
+  }
+  .cart__right-default {
+    padding-inline: 35px;
+    margin-block-start: 35px;
+  }
+
+  .mortgage__result {
+    width: 20.625rem;
+    min-height: 220px;
+    padding-inline: 20px;
+  }
+
+  .cart__right-result.active {
+    padding-inline: 20px;
+    margin-block-start: 35px;
+    padding-block-end: 10px;
+  }
+
+  .cart__right-result .text__result {
+    margin-block-end: 25px;
+  }
+
+  .mortgage__result p:first-child {
+    margin-bottom: 0px;
+  }
+
+  .mortgage__result .result {
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+  }
+
+  .mortgage__result p:nth-child(3) {
+    padding-top: 20px;
+  }
+
+  .mortgage__result p:nth-child(4) {
+    margin-block-end: 10px;
+  }
+}
