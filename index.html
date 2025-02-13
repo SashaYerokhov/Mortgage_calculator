@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="cart">
+      <div class="cart__left">
+        <form action="#">
+          <div class="cart__left-header">
+            <h2>Mortgage Calculator</h2>
+            <button type="reset" class="clear-form">
+              <a href="#">Clear All</a>
+            </button>
+          </div>
+          <div class="amount">
+
+            <label for="mortage-amount">Mortgage Amount</label>
+            <span class="icon-amount">&#163;</span>
+            <input
+              type="number"
+              name="mortage-amount"
+              id="mortage-amount"
+              required
+            />
+            <p class="error"></p>
+          </div>
+          <div class="cart-term-rate">
+            <div class="cart-term">
+              <label for="mortage-term">Mortgage Term</label>
+              <span class="icon-term">years</span>
+              <input
+                type="number"
+                name="mortage-term"
+                id="mortage-term"
+                maxlength="2"
+                autofocus
+                required
+              />
+              <p class="error"></p>
+            </div>
+            <div class="cart-rate">
+              <label for="mortage-rate">Interest Rate</label>
+              <span class="icon-rate">&#37;</span>
+              <input
+                type="number"
+                name="mortage-term"
+                id="mortage-rate"
+                step="0.01"
+                autofocus
+                required
+              />
+              <!-- <p>This field is required</p> -->
+              <p class="error"></p>
+            </div>
+          </div>
+          <div class="cart-type">
+           
+            <ul>
+               <h4>Mortgage Type</h4>
+                <li class="type-play">
+                    <label for="repayment" class="radio">
+                        <input type="radio" name="mortgage-type" id="repayment" value="repayment">
+                        <span>Repayment</span>
+                        <span class="radio-border"></span>
+                    </label>
+                </li>
+                <li class="type-only">
+                    <label for="only" class="radio">
+                        <input type="radio" name="mortgage-type" id="only" value="only">
+                        <span>Interest Only</span>
+                        <span class="radio-border"></span>
+                    </label>
+                </li>    
+            </ul>
+            <p>This field is required</p>
+            <p class="error"></p>
+        </div>
+          <button class="cart__calculate">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#133041"
+                  d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"
+                />
+              </svg>
+            </span>
+            <span>Calculate Repayments</span>
+          </button>
+        </form>
+      </div>
+      <div class="cart__right">
+        <div class="cart__right-default">
+          <img
+            src="./assets/images/illustration-empty.svg"
+            alt="illustration empty"
+          />
+          <h3>Results shown here</h3>
+          <p>
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div class="cart__right-result">
+          <h4>Your results</h4>
+          <p class="text__result">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+          <div class="mortgage__result">
+            <p>Your monthly repayments</p>
+            <p class="result"></p>
+            <p>Total you'll repay over the term</p>
+            <p class="result__mortgage"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empty results start -->
+
+    <!-- Empty results end -->
+
+    <!-- Completed results start -->
+
+    <!-- Ваши ежемесячные платежи -->
+
+    <!-- Всего вы погасите в течение срока -->
+
+    <!-- Completed results end -->
+
+    <!-- 
+  300 000
+  25 лет
+  процент 5.25
+  1.797-74
+  539.322-94 
+
+  платеж 400 000
+  Срок 30 лет
+  ставка 5%
+
+  верхня дробь
+  400 000 (0.05/12)
+  400 000 * 0.00416666666
+   = 1666.66666667
+   нижняя дробь
+
+  
+https://www.youtube.com/watch?v=-5cw1xc8pTw
+  -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
